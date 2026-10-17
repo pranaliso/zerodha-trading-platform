@@ -1,0 +1,140 @@
+.buy-window{
+
+    position: fixed;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:380px;
+
+    background:white;
+
+    border-radius:10px;
+
+    box-shadow:0 5px 25px rgba(0,0,0,0.2);
+
+    z-index:1000;
+
+}
+
+
+
+.buy-header{
+
+    background:#4184f3;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:10px 10px 0 0;
+
+}
+
+
+
+.buy-body{
+
+    display:flex;
+
+    gap:20px;
+
+    padding:25px;
+
+}
+
+
+
+.input-box{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+
+
+.input-box input{
+
+    width:120px;
+
+    padding:10px;
+
+    border:1px solid #ddd;
+
+    border-radius:5px;
+
+}
+
+
+
+
+.button-container{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    padding:15px;
+
+}
+
+
+
+.buy-btn{
+
+    background:#4184f3;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 25px;
+
+    border-radius:5px;
+
+    cursor:pointer;
+
+}
+
+
+
+.sell-btn{
+
+    background:#ef5350;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 25px;
+
+    border-radius:5px;
+
+    cursor:pointer;
+
+}
+
+
+
+.cancel-btn{
+
+    background:#ddd;
+
+    border:none;
+
+    padding:10px 25px;
+
+    border-radius:5px;
+
+    cursor:pointer;
+
+}

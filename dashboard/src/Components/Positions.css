@@ -1,0 +1,46 @@
+.positions-container {
+  padding: 20px;
+}
+
+
+.title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+
+.order-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+th {
+  text-align: left;
+  padding: 12px;
+  color: #666;
+  border-bottom: 1px solid #ddd;
+}
+
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+
+.profit {
+  color: #2e9d4d;
+}
+
+
+.loss {
+  color: #df3f3f;
+}

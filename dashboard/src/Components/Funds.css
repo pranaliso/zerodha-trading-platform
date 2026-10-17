@@ -1,0 +1,629 @@
+/* =========================================================
+   FUNDS PAGE
+========================================================= */
+
+.funds-page {
+    width: 100%;
+    min-height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+
+    background: #fafafa;
+    color: #424242;
+}
+
+
+/* =========================================================
+   TOP FUND ACTION BOX
+========================================================= */
+
+.funds {
+    background: #ffffff;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    border: 1px solid #e5e5e5;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FUNDS HEADING
+========================================================= */
+
+.funds h2 {
+    margin: 0;
+
+    font-size: 22px;
+
+    font-weight: 500;
+
+    color: #333;
+}
+
+
+.funds p {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #666;
+
+    flex: 1;
+}
+
+
+/* =========================================================
+   AMOUNT INPUT
+========================================================= */
+
+.funds input {
+    width: 190px;
+
+    height: 42px;
+
+    padding: 0 12px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #ddd;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    color: #333;
+
+    background: #fff;
+}
+
+
+.funds input:focus {
+    border-color: #387ed1;
+
+    box-shadow: 0 0 0 2px rgba(56, 126, 209, 0.08);
+}
+
+
+.funds input:disabled {
+    background: #f5f5f5;
+
+    cursor: not-allowed;
+}
+
+
+/* Remove number input arrows */
+
+.funds input::-webkit-outer-spin-button,
+.funds input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+
+    margin: 0;
+}
+
+
+.funds input[type="number"] {
+    appearance: textfield;
+}
+
+
+/* =========================================================
+   FUND BUTTON CONTAINER
+========================================================= */
+
+.fund-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn {
+    height: 42px;
+
+    padding: 0 22px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease,
+        opacity 0.2s ease;
+}
+
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+
+.btn:active {
+    transform: translateY(0);
+}
+
+
+.btn:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   ADD FUNDS
+========================================================= */
+
+.btn-green {
+    background: #00b386;
+}
+
+
+.btn-green:hover {
+    background: #00966f;
+}
+
+
+/* =========================================================
+   WITHDRAW
+========================================================= */
+
+.btn-blue {
+    background: #387ed1;
+}
+
+
+.btn-blue:hover {
+    background: #2868b7;
+}
+
+
+/* =========================================================
+   SUCCESS / ERROR MESSAGES
+========================================================= */
+
+.profit {
+    color: #00a67d !important;
+
+    font-size: 13px !important;
+
+    font-weight: 500;
+
+    flex: none !important;
+}
+
+
+.loss {
+    color: #ef5350 !important;
+
+    font-size: 13px !important;
+
+    font-weight: 500;
+
+    flex: none !important;
+}
+
+
+/* =========================================================
+   FUNDS GRID
+========================================================= */
+
+.row {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 30px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   COLUMNS
+========================================================= */
+
+.col {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.col > h3 {
+    margin: 0 0 15px 0;
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+    color: #333;
+}
+
+
+/* =========================================================
+   TABLE / CARD
+========================================================= */
+
+.table {
+    background: #ffffff;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 10px;
+
+    padding: 20px 25px;
+
+    margin-bottom: 30px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DATA ROW
+========================================================= */
+
+.data {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #eeeeee;
+
+    font-size: 14px;
+}
+
+
+.data:last-child {
+    border-bottom: none;
+}
+
+
+.data p {
+    margin: 0;
+
+    color: #666;
+}
+
+
+.data p:last-child {
+    color: #333;
+
+    font-weight: 500;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   IMPORTANT VALUES
+========================================================= */
+
+.imp {
+    font-size: 16px;
+
+    font-weight: 600 !important;
+
+    color: #333 !important;
+}
+
+
+.colored {
+    color: #00b386 !important;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.table hr {
+    border: none;
+
+    border-top: 1px solid #eeeeee;
+
+    margin: 8px 0;
+}
+
+
+/* =========================================================
+   TRANSACTION TEXT
+========================================================= */
+
+.table .data > div {
+    min-width: 0;
+
+    flex: 1;
+}
+
+
+.table .data > div p {
+    color: #444;
+
+    font-weight: 500;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+.table .data small {
+    color: #888;
+}
+
+
+/* =========================================================
+   EMPTY TRANSACTION MESSAGE
+========================================================= */
+
+.sub-text {
+    color: #777 !important;
+
+    font-size: 14px !important;
+
+    text-align: center;
+
+    padding: 15px 0;
+
+    margin: 0 !important;
+}
+
+
+/* =========================================================
+   COMMODITY
+========================================================= */
+
+.commodity {
+    background: #ffffff;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 10px;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+
+.commodity h3 {
+    margin: 0 0 20px 0;
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+    color: #333;
+}
+
+
+.commodity p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.funds-loading {
+    min-height: 400px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #fafafa;
+
+    color: #555;
+}
+
+
+.funds-loading h2 {
+    font-size: 20px;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .funds-page {
+        padding: 20px;
+    }
+
+
+    .funds {
+        flex-wrap: wrap;
+    }
+
+
+    .funds h2 {
+        width: 100%;
+    }
+
+
+    .funds p {
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
+
+    .row {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .funds-page {
+        padding: 15px;
+    }
+
+
+    .funds {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 12px;
+
+        padding: 20px;
+    }
+
+
+    .funds h2 {
+        width: 100%;
+    }
+
+
+    .funds p {
+        width: 100%;
+
+        flex: none;
+
+        line-height: 1.5;
+    }
+
+
+    .funds input {
+        width: 100%;
+
+        height: 42px;
+    }
+
+
+    .fund-buttons {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    .btn {
+        width: 100%;
+    }
+
+
+    .table {
+        padding: 15px;
+    }
+
+
+    .data {
+        font-size: 13px;
+
+        gap: 10px;
+    }
+
+
+    .data p:last-child {
+        white-space: nowrap;
+    }
+
+
+    .commodity {
+        padding: 25px 20px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .funds-page {
+        padding: 10px;
+    }
+
+
+    .funds {
+        padding: 15px;
+    }
+
+
+    .table {
+        padding: 12px;
+    }
+
+
+    .data {
+        padding: 12px 0;
+
+        font-size: 12px;
+    }
+
+
+    .imp {
+        font-size: 14px;
+    }
+
+}

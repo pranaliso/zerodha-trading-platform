@@ -1,0 +1,112 @@
+/* =========================================================
+   HOLDINGS HEADER
+========================================================= */
+
+.holdings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.holdings-subtitle {
+    margin: -15px 0 20px;
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   HOLDINGS SUMMARY
+========================================================= */
+
+.holdings-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.summary-box {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.summary-box span {
+    display: block;
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.summary-box strong {
+    font-size: 20px;
+    color: #333;
+}
+
+
+/* =========================================================
+   EMPTY HOLDINGS
+========================================================= */
+
+.empty-state {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.empty-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.empty-state h2 {
+    margin: 0 0 10px;
+    color: #333;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.empty-state p {
+    margin: 5px 0;
+    color: #777;
+    font-size: 15px;
+}
+
+.empty-state .empty-small {
+    font-size: 13px;
+    color: #999;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media screen and (max-width: 900px) {
+
+    .holdings-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .holdings-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-box strong {
+        font-size: 18px;
+    }
+
+    .empty-state {
+        padding: 50px 15px;
+    }
+
+}

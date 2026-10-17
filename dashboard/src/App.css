@@ -1,0 +1,229 @@
+/* Main Application Layout */
+
+.app-container {
+    min-height: 100vh;
+    background: #f8f9fa;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+
+/* Main content area */
+
+.content-area {
+    flex: 1;
+    padding: 30px;
+    background: #ffffff;
+    min-height: calc(100vh - 70px);
+}
+
+
+/* Dashboard pages */
+
+.page-container {
+
+    padding: 20px;
+
+}
+
+
+.page-container h2 {
+
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+
+}
+
+
+/* Cards */
+
+.card {
+
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 25px;
+
+    border: 1px solid #e5e5e5;
+
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
+
+}
+
+
+/* Buttons */
+
+button {
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+}
+
+
+/* Empty pages like Orders */
+
+.no-orders {
+
+    height: 300px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#777;
+
+}
+
+
+.no-orders p {
+
+    font-size:18px;
+
+    margin-bottom:20px;
+
+}
+
+
+.btn {
+
+    background:#387ed1;
+
+    color:white;
+
+    padding:10px 25px;
+
+    border-radius:5px;
+
+    text-decoration:none;
+
+}
+
+
+.btn:hover {
+
+    background:#285fa8;
+
+}
+
+
+
+/* Apps Page */
+
+.apps-page {
+
+    padding:20px;
+
+}
+
+
+.apps-page h2 {
+
+    font-size:28px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.apps-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.app-card {
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    border:1px solid #e5e5e5;
+
+    text-align:center;
+
+    transition:0.3s;
+
+}
+
+
+
+.app-card:hover {
+
+    transform:translateY(-5px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+
+}
+
+
+
+.app-icon {
+
+    font-size:40px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.app-card button {
+
+    background:#387ed1;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 25px;
+
+    border-radius:5px;
+
+}
+
+
+
+.app-card button:hover {
+
+    background:#285fa8;
+
+}
+
+
+
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .apps-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .content-area{
+
+        padding:15px;
+
+    }
+
+}

@@ -1,0 +1,754 @@
+/* =========================================================
+   WATCHLIST CONTAINER
+========================================================= */
+
+.watchlist-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SEARCH SECTION
+========================================================= */
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SEARCH INPUT
+========================================================= */
+
+.search {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+
+  padding: 0 42px 0 38px;
+
+  border: 1px solid #dedede;
+  border-radius: 8px;
+
+  background: #fafafa;
+  color: #333333;
+
+  font-size: 14px;
+  outline: none;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.search:hover {
+  background: #ffffff;
+  border-color: #bbbbbb;
+}
+
+.search:focus {
+  background: #ffffff;
+  border-color: #387ed1;
+  box-shadow: 0 0 0 3px rgba(56, 126, 209, 0.15);
+}
+
+.search::placeholder {
+  color: #999999;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   SEARCH ICON
+========================================================= */
+
+.search-container::before {
+  content: "🔍";
+
+  position: absolute;
+  left: 27px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 14px;
+  opacity: 0.5;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+/* =========================================================
+   CLEAR BUTTON
+========================================================= */
+
+.clear-btn {
+  position: absolute;
+  right: 72px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #eeeeee;
+  color: #777777;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  z-index: 2;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.clear-btn:hover {
+  background: #387ed1;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   STOCK COUNT
+========================================================= */
+
+.counts {
+  min-width: 50px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 10px;
+
+  border-radius: 20px;
+
+  background: #f3f3f3;
+  color: #666666;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  flex-shrink: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ERROR / MESSAGE
+========================================================= */
+
+.sub-text {
+  margin: 10px 15px;
+
+  color: #d9534f;
+
+  font-size: 13px;
+  line-height: 1.4;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   STOCK LIST
+========================================================= */
+
+.list {
+  width: 100%;
+
+  margin: 0;
+  padding: 10px;
+
+  list-style: none;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/*
+   The main stock list should consume available space.
+   This prevents the chart from being pushed out.
+*/
+
+.watchlist-container > .list {
+  flex: 1;
+  min-height: 0;
+}
+
+
+/*
+   Search suggestion list should NOT consume
+   the entire available height.
+*/
+
+.search-container + .list {
+  flex: 0 0 auto;
+  max-height: 280px;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: #dddddd;
+  border-radius: 20px;
+}
+
+.list::-webkit-scrollbar-thumb:hover {
+  background: #bbbbbb;
+}
+
+
+/* =========================================================
+   STOCK LIST ITEM
+========================================================= */
+
+.list li {
+  position: relative;
+
+  width: 100%;
+
+  padding: 12px;
+  margin-bottom: 5px;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.list li:hover {
+  background: #f6f6f6;
+}
+
+
+/* =========================================================
+   STOCK ITEM
+========================================================= */
+
+.item {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 10px;
+
+  width: 100%;
+}
+
+
+/*
+   Stock name/company wrapper
+*/
+
+.item > div:first-child {
+  min-width: 0;
+  flex: 1;
+}
+
+
+/* =========================================================
+   STOCK NAME
+========================================================= */
+
+.item > div:first-child > p {
+  margin: 0;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   COMPANY NAME
+========================================================= */
+
+.item > div:first-child > small {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   STOCK PRICE INFORMATION
+========================================================= */
+
+.itemInfo {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 4px;
+
+  min-width: 0;
+
+  font-size: 13px;
+
+  flex-shrink: 0;
+}
+
+.price {
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #333333;
+
+  white-space: nowrap;
+}
+
+.percent {
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   PRICE DIRECTION
+========================================================= */
+
+.up {
+  color: #00b386;
+}
+
+.down {
+  color: #eb5b3c;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 10px;
+  padding-top: 8px;
+
+  border-top: 1px solid #eeeeee;
+}
+
+
+/* =========================================================
+   ACTION BUTTON BASE
+========================================================= */
+
+.actions button {
+  display: inline-flex;
+
+  justify-content: center;
+  align-items: center;
+
+  min-width: 45px;
+  height: 32px;
+
+  padding: 5px 10px;
+
+  border: none;
+  border-radius: 5px;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.1s ease;
+}
+
+.actions button:hover {
+  opacity: 0.85;
+}
+
+.actions button:active {
+  transform: scale(0.97);
+}
+
+
+/* =========================================================
+   BUY
+========================================================= */
+
+.buy {
+  background: #387ed1;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SELL
+========================================================= */
+
+.sell {
+  background: #eb5b3c;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   OTHER ACTION
+========================================================= */
+
+.action {
+  background: #eeeeee;
+  color: #333333;
+
+  min-width: 34px !important;
+}
+
+.action svg {
+  font-size: 19px;
+}
+
+
+/* =========================================================
+   ADD BUTTON
+========================================================= */
+
+.item > .buy {
+  margin-left: auto;
+
+  min-width: 55px;
+  height: 30px;
+
+  padding: 5px 12px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #387ed1;
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   SEARCH SUGGESTION ITEM
+========================================================= */
+
+.search-container + .list .item {
+  min-height: 42px;
+}
+
+.search-container + .list .item > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-container + .list .item > div:first-child > p {
+  color: #333333;
+}
+
+
+/* =========================================================
+   MORE CONTAINER
+========================================================= */
+
+.more-container {
+  position: relative;
+}
+
+
+/* =========================================================
+   MORE MENU
+========================================================= */
+
+.more-menu {
+  position: absolute;
+
+  right: 0;
+  top: calc(100% + 6px);
+
+  width: 180px;
+
+  padding: 6px 0;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 7px;
+
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.12);
+
+  z-index: 1000;
+}
+
+.more-menu p {
+  margin: 0;
+
+  padding: 10px 12px;
+
+  font-size: 13px;
+
+  color: #333333;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease;
+}
+
+.more-menu p:hover {
+  background: #f5f5f5;
+}
+
+
+/* =========================================================
+   CHART
+========================================================= */
+
+.chart-box {
+  flex-shrink: 0;
+
+  height: 280px;
+
+  margin: 10px;
+  padding: 15px;
+
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   CHART CANVAS / SVG
+========================================================= */
+
+.chart-box canvas,
+.chart-box svg {
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.watchlist-container > .sub-text {
+  text-align: center;
+
+  padding: 15px;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .watchlist-container {
+    height: 100%;
+  }
+
+  .chart-box {
+    height: 240px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .search-container {
+    padding: 12px 10px;
+    gap: 7px;
+  }
+
+  .search {
+    height: 40px;
+
+    font-size: 13px;
+
+    padding-left: 35px;
+    padding-right: 38px;
+  }
+
+  .search-container::before {
+    left: 21px;
+  }
+
+  .clear-btn {
+    right: 57px;
+
+    width: 22px;
+    height: 22px;
+  }
+
+  .counts {
+    min-width: 42px;
+    height: 26px;
+
+    padding: 0 7px;
+
+    font-size: 12px;
+  }
+
+  .list {
+    padding: 7px;
+  }
+
+  .list li {
+    padding: 10px;
+  }
+
+  .item {
+    gap: 6px;
+  }
+
+  .itemInfo {
+    gap: 2px;
+  }
+
+  .price {
+    font-size: 13px;
+  }
+
+  .percent {
+    font-size: 11px;
+  }
+
+  .actions {
+    gap: 5px;
+  }
+
+  .actions button {
+    min-width: 40px;
+    height: 30px;
+
+    padding: 4px 8px;
+  }
+
+  .more-menu {
+    width: 160px;
+  }
+
+  .chart-box {
+    height: 220px;
+
+    margin: 7px;
+    padding: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .search-container {
+    gap: 5px;
+    padding: 10px 7px;
+  }
+
+  .search {
+    font-size: 12px;
+    padding-left: 32px;
+  }
+
+  .search-container::before {
+    left: 17px;
+  }
+
+  .counts {
+    min-width: 38px;
+    padding: 0 5px;
+
+    font-size: 11px;
+  }
+
+  .item {
+    align-items: flex-start;
+  }
+
+  .itemInfo {
+    flex-wrap: wrap;
+  }
+
+  .actions {
+    flex-wrap: wrap;
+  }
+
+}
